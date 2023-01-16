@@ -14,7 +14,21 @@ const Shop = () => {
             .then(data => setStickers(data));
     }, []);
 
+    useEffect(() => {
+        const storedCart = getStoredCart();
+        const savedCart = [];
 
+        for (const id in storedCart) {
+            const addedSticker = stickers.find(sticker => sticker.id === id);
+            if (addedSticker) {
+                const quantity = storedCart[id];
+                addedSticker.quantity = quantity;
+                savedCart.push(addedSticker);
+            }
+        }
+
+        setCart(savedCart);
+    }, [stickers]);
 
     return (
         <div className='shop-container'>
