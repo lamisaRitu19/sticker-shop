@@ -30,14 +30,32 @@ const Shop = () => {
         setCart(savedCart);
     }, [stickers]);
 
+    const handleAddToCart = selectedSticker => {
+        let newCart = [];
+
+        const exists = cart.find(sticker => sticker.id === selectedSticker.id);
+        if (!exists) {
+            selectedSticker.quantity = 1;
+            newCart = [...cart, selectedSticker];
+        }
+        else {
+            const rest = cart.filter(sticker => sticker.id !== selectedSticker.id);
+            exists.quantity += 1;
+            newCart = [...rest, exists];
+        }
+
+        setCart(newCart);
+        addToDb(selectedSticker.id);
+    }
+
     return (
         <div className='shop-container'>
             <div className='sticker-container'>
                 {
                     stickers.map(sticker => <Sticker
                         key={sticker.id}
-                        sticker={sticker}>
-                        {/* handleAddToCart={handleAddToCart} */}
+                        sticker={sticker}
+                        handleAddToCart={handleAddToCart}>
                     </Sticker>)
                 }
             </div>
