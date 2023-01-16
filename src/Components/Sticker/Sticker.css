@@ -1,0 +1,39 @@
+.sticker {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 8px 5px 5px rgb(175, 172, 172);
+}
+
+.sticker img {
+    width: 333px;
+    height: 233px;
+    border-radius: 5px;
+}
+
+h4 {
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+button {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 10px;
+    color: rgb(175, 172, 172);
+    background-color: rgb(178, 0, 0);
+    box-shadow: 4px 2px 5px rgb(175, 172, 172);
+}
+
+button:hover {
+    color: black;
+    border: 1px solid black;
+}

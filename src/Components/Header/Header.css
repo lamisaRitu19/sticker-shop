@@ -1,0 +1,13 @@
+h1 {
+    font-size: 60px;
+    color: rgb(178, 0, 0);
+    text-shadow: 8px 5px 5px rgb(175, 172, 172);
+    margin: 0;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 600;
+    text-shadow: 8px 5px 5px rgb(175, 172, 172);
+    margin: 20px 0 40px;
+}

@@ -1,0 +1,80 @@
+[
+    {
+        "id": 0,
+        "name": "Naruto Uzumaki",
+        "price": "$403.47",
+        "image": "https://i0.wp.com/ramenswag.com/wp-content/uploads/2016/12/naruto-wallpaper-7.jpg?fit=1600%2C1135&ssl=1"
+    },
+    {
+        "id": 1,
+        "name": "Sasuke Uchiha",
+        "price": "$437.76",
+        "image": "https://free4kwallpapers.com/uploads/originals/2015/08/30/uchiha-sasuke-naruto-shippuden-curse-mark.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sakura Haruno",
+        "price": "$208.67",
+        "image": "https://images.wallpapersden.com/image/download/sakura-haruno-art_a21ubWyUmZqaraWkpJRmbmdlrWZlbWU.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Hinata Hyuga",
+        "price": "$289.20",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvMGXSjF-65DP5sEM_NMCdA_UNtTDrisgCLSX-kY99YNmgVjca_AxvfJtibbkTTljknyw&usqp=CAU"
+    },
+    {
+        "id": 4,
+        "name": "Gaara Yuzawa",
+        "price": "$338.04",
+        "image": "https://wallpapercave.com/wp/wp2887114.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Shikamaru Nara",
+        "price": "$328.01",
+        "image": "https://wallpapercave.com/wp/wp2645527.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Kakashi Hatake",
+        "price": "$397.24",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2gUWtmqBYoJSLZ1eZ8O3a2rbAcF714L9nJA&usqp=CAU"
+    },
+    {
+        "id": 7,
+        "name": "Henderson Carrillo",
+        "price": "$399.95",
+        "image": "http://placehold.it/32x32"
+    },
+    {
+        "id": 8,
+        "name": "Alicia Parsons",
+        "price": "$430.08",
+        "image": "http://placehold.it/32x32"
+    },
+    {
+        "id": 9,
+        "name": "Alicia Parsons",
+        "price": "$430.08",
+        "image": "http://placehold.it/32x32"
+    },
+    {
+        "id": 10,
+        "name": "Alicia Parsons",
+        "price": "$430.08",
+        "image": "http://placehold.it/32x32"
+    },
+    {
+        "id": 11,
+        "name": "Alicia Parsons",
+        "price": "$430.08",
+        "image": "http://placehold.it/32x32"
+    },
+    {
+        "id": 12,
+        "name": "Alicia Parsons",
+        "price": "$430.08",
+        "image": "http://placehold.it/32x32"
+    }
+]

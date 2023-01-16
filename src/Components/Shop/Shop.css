@@ -1,0 +1,18 @@
+.shop-container {
+    display: grid;
+    grid-template-columns: 3fr 440px;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.sticker-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cart-container {
+    background-color: rgb(223, 154, 154);
+    box-shadow: 8px 5px 5px rgb(175, 172, 172);
+    border-radius: 5px;
+}
