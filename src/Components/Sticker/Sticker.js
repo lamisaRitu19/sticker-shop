@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import './Sticker.css';
 
@@ -9,7 +11,9 @@ const Sticker = (props) => {
             <h4>{name}</h4>
             <p>Price: {price}</p>
             <button
-                onClick={() => { props.handleAddToCart(props.sticker) }}>Purchase</button>
+                onClick={() => { props.handleAddToCart(props.sticker) }}>
+                Purchase <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+            </button>
         </div>
     );
 };
