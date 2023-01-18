@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Cart from '../Cart/Cart';
+import CartItem from '../CartItem/CartItem';
 import Sticker from '../Sticker/Sticker';
-import { addToDb, getStoredCart } from '../utilities/fakedb';
 import './Shop.css';
 
 const Shop = () => {
     const [stickers, setStickers] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    // console.log(cartItems);
 
     useEffect(() => {
         fetch('stickers.json')
@@ -14,38 +14,29 @@ const Shop = () => {
             .then(data => setStickers(data));
     }, []);
 
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedCart = [];
-
-        for (const id in storedCart) {
-            const addedSticker = stickers.find(sticker => sticker.id === id);
-            if (addedSticker) {
-                const quantity = storedCart[id];
-                addedSticker.quantity = quantity;
-                savedCart.push(addedSticker);
-            }
-        }
-
-        setCart(savedCart);
-    }, [stickers]);
-
     const handleAddToCart = selectedSticker => {
-        let newCart = [];
+        let cart = [];
 
-        const exists = cart.find(sticker => sticker.id === selectedSticker.id);
-        if (!exists) {
-            selectedSticker.quantity = 1;
-            newCart = [...cart, selectedSticker];
+        const addedSticker = stickers.find(sticker =>
+            sticker.id === selectedSticker.id);
+        if ((addedSticker) && (cartItems.length < 4)) {
+            cart = [...cartItems, addedSticker];
+            setCartItems(cart);
         }
         else {
-            const rest = cart.filter(sticker => sticker.id !== selectedSticker.id);
-            exists.quantity += 1;
-            newCart = [...rest, exists];
+            const warningMessage = document.getElementById('warning');
+            warningMessage.style.display = 'block';
         }
+    }
 
-        setCart(newCart);
-        addToDb(selectedSticker.id);
+    const handleRemoveFromCart = deletedSticker => {
+        // const abc = deletedSticker.name;
+        // const removedSticker = document.getElementsByTagName('Sticker');
+        // const remainingStickers = cartItems.filter(cartItem =>
+        // cartItem.id !== deletedSticker.id);
+        // setCartItems(remainingStickers);
+
+        // console.log(removedSticker);
     }
 
     return (
@@ -60,7 +51,22 @@ const Shop = () => {
                 }
             </div>
             <div className='cart-container'>
-                <Cart></Cart>
+                <h4>Selected Stickers</h4>
+                <p id='warning'>Only four stickers can be added!</p>
+                <div className="cartItem-container">
+                    {
+                        cartItems.map(cartItem => <CartItem
+                            key={cartItem.id}
+                            id={cartItem.name}
+                            cartItem={cartItem}
+                            handleRemoveFromCart={handleRemoveFromCart}>
+                        </CartItem>)
+                    }
+                </div>
+
+                {/* <div className="final-sticker"></div> */}
+                <button>Choose one for me</button>
+                <button>Choose again</button>
             </div>
         </div>
     );

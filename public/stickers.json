@@ -15,7 +15,7 @@
         "id": 2,
         "name": "Sakura Haruno",
         "price": "$208.67",
-        "image": "https://images.wallpapersden.com/image/download/sakura-haruno-art_a21ubWyUmZqaraWkpJRmbmdlrWZlbWU.jpg"
+        "image": "https://images.hdqwalls.com/wallpapers/sakura-haruno-from-naruto-4k-oa.jpg"
     },
     {
         "id": 3,
@@ -43,38 +43,32 @@
     },
     {
         "id": 7,
-        "name": "Henderson Carrillo",
+        "name": "Rock Lee",
         "price": "$399.95",
-        "image": "http://placehold.it/32x32"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTokU8nGGAB7ggSK9ZaVNdWrty8caVbhDPXVXRhod7v2h1izYivXeE19ufNN-cPnMXqCYU&usqp=CAU"
     },
     {
         "id": 8,
-        "name": "Alicia Parsons",
+        "name": "Neji Hyuga",
         "price": "$430.08",
-        "image": "http://placehold.it/32x32"
+        "image": "https://wallpapercave.com/wp/wp2958789.jpg"
     },
     {
         "id": 9,
-        "name": "Alicia Parsons",
-        "price": "$430.08",
-        "image": "http://placehold.it/32x32"
+        "name": "Minato Namikaze",
+        "price": "$464.02",
+        "image": "https://cdn.wallpapersafari.com/90/87/02vrEU.jpg"
     },
     {
         "id": 10,
-        "name": "Alicia Parsons",
-        "price": "$430.08",
-        "image": "http://placehold.it/32x32"
+        "name": "Kushina Uzumaki",
+        "price": "$390.08",
+        "image": "https://www.greenscene.co.id/wp-content/uploads/2020/11/Naruto-3.jpg"
     },
     {
         "id": 11,
-        "name": "Alicia Parsons",
-        "price": "$430.08",
-        "image": "http://placehold.it/32x32"
-    },
-    {
-        "id": 12,
-        "name": "Alicia Parsons",
-        "price": "$430.08",
-        "image": "http://placehold.it/32x32"
+        "name": "Jiraiya",
+        "price": "$497.05",
+        "image": "https://cdn.wallpapersafari.com/12/61/euyCGr.jpg"
     }
 ]
