@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect, useState } from 'react';
 import CartItem from '../CartItem/CartItem';
 import Sticker from '../Sticker/Sticker';
@@ -18,9 +20,16 @@ const Shop = () => {
 
         const addedSticker = stickers.find(sticker =>
             sticker.id === selectedSticker.id);
-        if ((addedSticker) && (cartItems.length < 4)) {
+
+        const existingSticker = cartItems.find(cartItem => cartItem.id === selectedSticker.id);
+
+        if ((!existingSticker) && (cartItems.length < 4)) {
             cart = [...cartItems, addedSticker];
             setCartItems(cart);
+        }
+        else if (existingSticker) {
+            const existingStickerMessage = document.getElementById('existingSticker');
+            existingStickerMessage.style.display = 'block';
         }
         else {
             const warningMessage = document.getElementById('warning');
@@ -43,6 +52,25 @@ const Shop = () => {
         }
     }
 
+    const handleClearCart = () => {
+        const clearCart = [];
+        setCartItems(clearCart);
+    }
+
+    const handleCross = () => {
+        const warningMessage = document.getElementById('warning');
+        warningMessage.style.display = 'none';
+
+        const existingStickerMessage = document.getElementById('existingSticker');
+        existingStickerMessage.style.display = 'none';
+
+        const chosenStickerMessage = document.getElementById('chosenSticker');
+        chosenStickerMessage.style.display = 'none';
+
+        const lessStickersMessage = document.getElementById('lessStickers');
+        lessStickersMessage.style.display = 'none';
+    }
+
     return (
         <div className='shop-container'>
             <div className='sticker-container'>
@@ -56,9 +84,21 @@ const Shop = () => {
             </div>
             <div className='cart-container'>
                 <h4>Selected Stickers</h4>
-                <p id='chosenSticker'></p>
-                <p id='lessStickers'>Choose four stickers first!</p>
-                <p id='warning'>Only four stickers can be added!</p>
+                <p id='chosenSticker'>
+                    <FontAwesomeIcon icon={faXmark} onClick={handleCross} className='ml-10' />
+                </p>
+                <p id='warning'>
+                    Only four stickers can be added!
+                    <FontAwesomeIcon icon={faXmark} onClick={handleCross} className='ml-10' />
+                </p>
+                <p id='lessStickers'>
+                    Choose four stickers first!
+                    <FontAwesomeIcon icon={faXmark} onClick={handleCross} className='ml-10' />
+                </p>
+                <p id='existingSticker'>
+                    The sticker is already present in the cart!
+                    <FontAwesomeIcon icon={faXmark} onClick={handleCross} className='ml-10' />
+                </p>
                 <div className="cartItem-container">
                     {
                         cartItems.map(cartItem => <CartItem
@@ -68,7 +108,7 @@ const Shop = () => {
                     }
                 </div>
                 <button onClick={handleChooseOne}>Choose one for me</button>
-                <button>Choose again</button>
+                <button onClick={handleClearCart}>Choose again</button>
             </div>
         </div>
     );
