@@ -22,3 +22,10 @@
     color: rgb(136, 1, 1);
     cursor: pointer;
 }
+
+@media screen and (max-width: 992px) {
+    .cartItem {
+        gap: 10px;
+        padding: 10px 20px;
+    }
+}

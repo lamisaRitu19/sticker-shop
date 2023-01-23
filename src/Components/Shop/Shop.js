@@ -6,7 +6,6 @@ import './Shop.css';
 const Shop = () => {
     const [stickers, setStickers] = useState([]);
     const [cartItems, setCartItems] = useState([]);
-    // console.log(cartItems);
 
     useEffect(() => {
         fetch('stickers.json')
@@ -29,14 +28,19 @@ const Shop = () => {
         }
     }
 
-    const handleRemoveFromCart = deletedSticker => {
-        // const abc = deletedSticker.name;
-        // const removedSticker = document.getElementsByTagName('Sticker');
-        // const remainingStickers = cartItems.filter(cartItem =>
-        // cartItem.id !== deletedSticker.id);
-        // setCartItems(remainingStickers);
+    const handleChooseOne = () => {
+        if (cartItems.length === 4) {
+            const value = Math.floor(Math.random() * 4);
+            const chosenName = cartItems[value].name;
 
-        // console.log(removedSticker);
+            const chosenStickerMessage = document.getElementById('chosenSticker');
+            chosenStickerMessage.innerText = `'` + chosenName + `' sticker is chosen!`;
+            chosenStickerMessage.style.display = 'block';
+        }
+        else {
+            const lessStickersMessage = document.getElementById('lessStickers');
+            lessStickersMessage.style.display = 'block';
+        }
     }
 
     return (
@@ -52,20 +56,18 @@ const Shop = () => {
             </div>
             <div className='cart-container'>
                 <h4>Selected Stickers</h4>
+                <p id='chosenSticker'></p>
+                <p id='lessStickers'>Choose four stickers first!</p>
                 <p id='warning'>Only four stickers can be added!</p>
                 <div className="cartItem-container">
                     {
                         cartItems.map(cartItem => <CartItem
                             key={cartItem.id}
-                            id={cartItem.name}
-                            cartItem={cartItem}
-                            handleRemoveFromCart={handleRemoveFromCart}>
+                            cartItem={cartItem}>
                         </CartItem>)
                     }
                 </div>
-
-                {/* <div className="final-sticker"></div> */}
-                <button>Choose one for me</button>
+                <button onClick={handleChooseOne}>Choose one for me</button>
                 <button>Choose again</button>
             </div>
         </div>

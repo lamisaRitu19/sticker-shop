@@ -3,8 +3,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import './CartItem.css';
 
-const CartItem = (props) => {
-    const { name, image } = props.cartItem;
+const CartItem = ({ cartItem, handleRemoveFromCart }) => {
+    const { name, image } = cartItem;
 
     return (
         <div className='cartItem'>
@@ -13,7 +13,7 @@ const CartItem = (props) => {
             <FontAwesomeIcon
                 icon={faTrash}
                 className='icon'
-                onClick={() => { props.handleRemoveFromCart(props.cartItem) }}></FontAwesomeIcon>
+                onClick={() => { handleRemoveFromCart(cartItem) }}></FontAwesomeIcon>
         </div>
     );
 };
